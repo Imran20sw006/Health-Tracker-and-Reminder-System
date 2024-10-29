@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: flex-start; /* Align items to the left */
+            align-items: center; /* Center items vertically */
+            height: 100vh;
+            background: url('pexels-eberhard-grossgasteiger-1612351.jpg');
+            background-size: cover; /* Ensures the image covers the entire screen */
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            margin-left: 20px; /* Optional: Adds space from the left edge */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 16px;
+            color: white;
+            margin-bottom: 10px;
+            display: block;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.2); /* Darker background for visibility */
+            color: #fff; /* White text for contrast */
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            background: rgba(232, 228, 228, 0); /* Slightly lighter on focus */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #34d399, #3b82f6);
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #3b82f6, #34d399);
+        }
+
+        .login-container {
+            display: flex; /* Use flexbox to align items */
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; /* Space from the input above */
+        }
+
+        p {
+            font-size: 16px;
+            color: #fff;
+            margin-right: 5px; /* Space between text and link */
+        }
+
+        .login-btn {
+            display: inline-block;
+            background-color: #34d399; /* Use a consistent color */
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #28a745; /* Darker green on hover */
+        }
+
+        /* Animations for more visual engagement */
+        .form-container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form action="../php/register_action.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <div class="login-container">
+            <p>Already have an account?</p>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </div>
+</body>
+</html>
